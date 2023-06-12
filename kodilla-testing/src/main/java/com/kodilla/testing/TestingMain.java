@@ -9,7 +9,6 @@ import java.util.List;
 
 public class TestingMain {
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
 
     }
 }
