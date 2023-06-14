@@ -10,7 +10,9 @@ import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.ExpressionExecutor;
 import com.kodilla.stream.person.People;
 import com.kodilla.stream.reference.FunctionalCalculator;
+import com.kodilla.stream.world.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
@@ -32,14 +34,20 @@ public class StreamMain {
 //                .map(entry ->entry.getKey() + ":" + entry.getValue())
 //                .forEach(System.out::println);
 
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify("Kamil",text -> text.toUpperCase());
-        poemBeautifier.beautify("MAGDA",text -> text.toLowerCase());
-        poemBeautifier.beautify("Kasia",text -> text + "ABC");
-        poemBeautifier.beautify("Kamil",text -> "ABC" + text);
-        poemBeautifier.beautify(" Marcelina ",text -> text.trim());
-        poemBeautifier.beautify("Michał",text -> text.substring(1,3));
-        poemBeautifier.beautify("Kamila",text -> text.replace("a","A"));
+//        PoemBeautifier poemBeautifier = new PoemBeautifier();
+//        poemBeautifier.beautify("Kamil",text -> text.toUpperCase());
+//        poemBeautifier.beautify("MAGDA",text -> text.toLowerCase());
+//        poemBeautifier.beautify("Kasia",text -> text + "ABC");
+//        poemBeautifier.beautify("Kamil",text -> "ABC" + text);
+//        poemBeautifier.beautify(" Marcelina ",text -> text.trim());
+//        poemBeautifier.beautify("Michał",text -> text.substring(1,3));
+//        poemBeautifier.beautify("Kamila",text -> text.replace("a","A"));
+
+
+
+
+
+
 
 
     }
