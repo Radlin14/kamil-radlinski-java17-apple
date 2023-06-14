@@ -11,7 +11,6 @@ public class OddNumbersExterminator {
             if(number%2==0){
                 list.add(number);
             }
-
         }
         return list;
     }
