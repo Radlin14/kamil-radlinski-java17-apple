@@ -34,14 +34,14 @@ public class StreamMain {
 //                .map(entry ->entry.getKey() + ":" + entry.getValue())
 //                .forEach(System.out::println);
 
-//        PoemBeautifier poemBeautifier = new PoemBeautifier();
-//        poemBeautifier.beautify("Kamil",text -> text.toUpperCase());
-//        poemBeautifier.beautify("MAGDA",text -> text.toLowerCase());
-//        poemBeautifier.beautify("Kasia",text -> text + "ABC");
-//        poemBeautifier.beautify("Kamil",text -> "ABC" + text);
-//        poemBeautifier.beautify(" Marcelina ",text -> text.trim());
-//        poemBeautifier.beautify("Michał",text -> text.substring(1,3));
-//        poemBeautifier.beautify("Kamila",text -> text.replace("a","A"));
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
+        poemBeautifier.beautify("Kamil",text -> text.toUpperCase());
+        poemBeautifier.beautify("MAGDA",text -> text.toLowerCase());
+        poemBeautifier.beautify("Kasia",text -> text + "ABC");
+        poemBeautifier.beautify("Kamil",text -> "ABC" + text);
+        poemBeautifier.beautify(" Marcelina ",text -> text.trim());
+        poemBeautifier.beautify("Michał",text -> text.substring(1,3));
+        poemBeautifier.beautify("Kamila",text -> text.replace("a","A"));
 
 
 
