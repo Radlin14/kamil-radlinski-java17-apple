@@ -9,8 +9,8 @@ public class Country {
         this.quantity = quantity;
     }
 
-    public BigDecimal getPeopleQuantity1(final BigDecimal quantity) {
+    public BigDecimal getPeopleQuantity() {
 
-       return quantity;
+       return quantity ;
     }
 }

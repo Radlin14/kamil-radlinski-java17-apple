@@ -8,5 +8,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class ShapeCollectorTestSuite {
+    @Test
+    void testingAddFigures() {
 
+    }
 }

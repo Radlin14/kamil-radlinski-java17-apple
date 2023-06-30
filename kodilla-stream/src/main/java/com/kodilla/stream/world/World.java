@@ -7,6 +7,12 @@ import java.util.List;
 public class World {
     List<Continent> continentList = new ArrayList<>();
 
+//   public BigDecimal getPeopleQuantity(){
+//    continentList.stream()
+//            .flatMap(continent -> continent.getCountryList().stream())
+//
+//
+//   }
 
 
     }

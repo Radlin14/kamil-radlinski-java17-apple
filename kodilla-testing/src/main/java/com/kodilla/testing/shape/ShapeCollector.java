@@ -2,12 +2,17 @@ package com.kodilla.testing.shape;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class ShapeCollector {
 
+    private Shape shape;
+    private List<Shape> shapeListlist = new ArrayList<>();
+
+
 
     public void addFigure(Shape shape){
+        shapeListlist.add(shape);
+
 
     }
     public void removeFigure(Shape shape){
