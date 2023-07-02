@@ -15,7 +15,7 @@ public class CollectionTestSuite {
     public void after() {
         System.out.println("Unit test execution completed");
     }
-    @DisplayName("When testingList is empty, test should return true")
+    @DisplayName("Testing method when list is empty")
     @Test
     void testOddNumbersExterminatorEmptyList(){
         //Given
@@ -25,7 +25,7 @@ public class CollectionTestSuite {
         //Then
         Assertions.assertTrue(testingList.isEmpty());
     }
-    @DisplayName("After calling the method on the testList, we should get only even numbers")
+    @DisplayName("Testing correct numbers filtering")
     @Test
     void testOddNumbersExterminatorNormalList(){
         //Given

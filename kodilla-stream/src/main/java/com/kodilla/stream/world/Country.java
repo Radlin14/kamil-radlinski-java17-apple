@@ -9,7 +9,7 @@ public class Country {
         this.quantity = quantity;
     }
 
-    public BigDecimal getPeopleQuantity() {
+    public  BigDecimal getPeopleQuantity() {
 
        return quantity ;
     }
