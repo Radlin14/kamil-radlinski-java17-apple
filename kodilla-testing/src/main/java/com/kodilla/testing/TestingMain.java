@@ -13,10 +13,10 @@ import java.util.Map;
 public class TestingMain {
     public static void main(String[] args) {
         ShapeCollector shapeCollector = new ShapeCollector();
-        shapeCollector.addFigure(new Triangle(3,2));
+        shapeCollector.addFigure(new Triangle(3, 2));
         shapeCollector.addFigure(new Circle(2));
         shapeCollector.getFigure(0);
-        shapeCollector.showFigures();
+        System.out.println(shapeCollector.showFigures());
 
     }
 }

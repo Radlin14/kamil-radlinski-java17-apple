@@ -5,15 +5,15 @@ import org.junit.jupiter.api.Test;
 
 public class ArrayOperationsTestSuite {
     @Test
-    void testGetAverage(){
+    void testGetAverage() {
         //Given
-        int [] numbers = new int[20];
-      for (int i=0 ; i <numbers.length ; i++){
-          numbers[i] = i + 1;
-      }
-      //When
+        int[] numbers = new int[20];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = i + 1;
+        }
+        //When
         double average = 10.5;
         //Then
-        Assertions.assertEquals(average,ArrayOperations.getAverage(numbers));
+        Assertions.assertEquals(average, ArrayOperations.getAverage(numbers));
     }
 }
