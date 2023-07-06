@@ -11,13 +11,10 @@ public class ShapeCollector {
 
     public void addFigure(Shape shape) {
         shapeList.add(shape);
-
-
     }
 
     public void removeFigure(Shape shape) {
         shapeList.remove(shape);
-
     }
 
     public Shape getFigure(int n) {
