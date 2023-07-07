@@ -13,31 +13,33 @@ import java.util.Objects;
 @DisplayName("Test of list")
 public class ShapeCollectorTestSuite {
 
-        @DisplayName("Testing adding a figure to list")
-        @Test
-         void testingAddFigures() {
-            //Given
-            Shape circle = new Circle(2);
-            ShapeCollector shapeCollector = new ShapeCollector();
-            //Then
-            shapeCollector.addFigure(circle);
-            //When
-            Assertions.assertNotNull(shapeCollector.getFigure(0));
-        }
-        @DisplayName("Testing remove figure from list")
-        @Test
-         void testingRemoveFigures() {
-            //Given
-            Shape circle = new Circle(2);
-            Shape square = new Square(3);
-            ShapeCollector shapeCollector = new ShapeCollector();
-            shapeCollector.addFigure(circle);
-            shapeCollector.addFigure(square);
-            //When
-            shapeCollector.removeFigure(circle);
-            //Then
-            Assertions.assertSame(square, shapeCollector.getFigure(0));
-        }
+    @DisplayName("Testing adding a figure to list")
+    @Test
+    void testingAddFigures() {
+        //Given
+        Shape circle = new Circle(2);
+        ShapeCollector shapeCollector = new ShapeCollector();
+        //Then
+        shapeCollector.addFigure(circle);
+        //When
+        Assertions.assertNotNull(shapeCollector.getFigure(0));
+    }
+
+    @DisplayName("Testing remove figure from list")
+    @Test
+    void testingRemoveFigures() {
+        //Given
+        Shape circle = new Circle(2);
+        Shape square = new Square(3);
+        ShapeCollector shapeCollector = new ShapeCollector();
+        shapeCollector.addFigure(circle);
+        shapeCollector.addFigure(square);
+        //When
+        shapeCollector.removeFigure(circle);
+        //Then
+        Assertions.assertSame(square, shapeCollector.getFigure(0));
+    }
+
     @DisplayName("Testing figure getting from list")
 
     @Test
@@ -49,6 +51,7 @@ public class ShapeCollectorTestSuite {
         //When & Then
         Assertions.assertSame(square, shapeCollector.getFigure(0));
     }
+
     @DisplayName("Testing showing list object")
     @Test
     void testingShowFigures() {
