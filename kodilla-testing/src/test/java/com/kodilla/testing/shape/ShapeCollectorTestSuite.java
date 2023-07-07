@@ -2,13 +2,15 @@ package com.kodilla.testing.shape;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Nested;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-@DisplayName("Shape Collector Test Suite")
+
+@Nested
+@DisplayName("Test of list")
 public class ShapeCollectorTestSuite {
 
         @DisplayName("Testing adding a figure to list")
