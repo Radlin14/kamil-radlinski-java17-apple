@@ -7,12 +7,15 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-public class TaskList {
-    List<String> tasks;
 
-    @Autowired
-    public TaskList(List<String> tasks) {
+public class TaskList {
+    private List<String> tasks;
+
+    public TaskList() {
         tasks = new ArrayList<>();
+    }
+
+    public List<String> getTasks() {
+        return tasks;
     }
 }
