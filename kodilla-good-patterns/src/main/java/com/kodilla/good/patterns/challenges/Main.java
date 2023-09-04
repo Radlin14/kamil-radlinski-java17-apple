@@ -6,14 +6,16 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        MovieStore movieStore = new MovieStore();
+        InformationService informationService = new InformationService();
+        OrderRepository productOrderRepository = new OrderRepository();
+        WarehouseService warehouseService = new WarehouseService();
+        ProductOrderService productOrderService = new ProductOrderService(informationService, productOrderRepository, warehouseService);
 
-        Map<String, List<String>> movies = movieStore.getMovies();
+        User user = new User("kowalski");
+        Product product = new Product("TV");
 
-        String allTitles = movies.values().stream()
-                .flatMap(List::stream)
-                .collect(Collectors.joining("!", "", ""));
+        productOrderService.process(user, product, 20);
 
-        System.out.println(allTitles);
+
     }
 }
