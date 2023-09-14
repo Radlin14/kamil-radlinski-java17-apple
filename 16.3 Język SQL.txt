@@ -1,0 +1,39 @@
+CREATE TABLE ISSUESLISTS
+(
+    ID   SERIAL,
+    NAME VARCHAR(255) NOT NULL
+);
+CREATE TABLE ISSUES
+(
+    ID                 SERIAL,
+    ISSUESLIST_ID      BIGINT UNSIGNED NOT NULL,
+    SUMMARY            text  NOT NULL,
+    DESCRIPTION        TEXT,
+    USER_ID_ASSIGENDTO BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS (ID),
+    FOREIGN KEY (USER_ID_ASSIGENDTO) REFERENCES USERS (ID)
+);
+
+INSERT INTO ISSUESLISTS (ID, NAME)
+VALUES (1, 'ToDo'),
+       (2, 'InProgress'),
+       (3, 'Done');
+
+INSERT INTO ISSUES(ID, ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGENDTO)
+VALUES (1, 1, 'Testy 1', 'Testowanie oprogramowania 1', 1),
+       (2, 1, 'Kodowanie 1', 'Pisanie kodu 1', 2),
+       (3, 1, 'Formatowanie 1', 'Formatowanie kodu 1', 3),
+       (4, 1, 'Bazy danych 1', 'Obsługa baz danych 1', 4),
+       (5, 1, 'Błedy 1', 'Obsługa baz błędów 1', 5),
+
+       (6, 2, 'Testy 2', 'Testowanie oprogramowania 2', 1),
+       (7, 2, 'Kodowanie 2', 'Pisanie kodu 2', 2),
+       (8, 2, 'Formatowanie 2', 'Formatowanie kodu 2', 3),
+       (9, 2, 'Bazy danych 2', 'Obsługa baz danych 2', 4),
+       (10, 2, 'Błedy 2', 'Obsługa baz błędów 2', 5),
+
+       (11, 3, 'Testy 3', 'Testowanie oprogramowania 3', 1),
+       (12, 3, 'Kodowanie 3', 'Pisanie kodu 3', 2),
+       (13, 3, 'Formatowanie 3', 'Formatowanie kodu 3', 3),
+       (14, 3, 'Bazy danych 3', 'Obsługa baz danych 3', 4),
+       (15, 3, 'Błedy 3', 'Obsługa baz błędów 3', 5);
