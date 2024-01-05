@@ -7,6 +7,10 @@ import java.util.List;
 
 @Entity
 @Table(name = "EMPLOYEES")
+@NamedQuery(
+        name = "Employee.findByLastname",
+        query = "SELECT e FROM Employee e WHERE e.lastname = :lastname"
+)
 public class Employee {
 
     private int id;

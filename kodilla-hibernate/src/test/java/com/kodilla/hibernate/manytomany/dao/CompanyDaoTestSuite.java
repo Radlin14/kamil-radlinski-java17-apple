@@ -6,7 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class CompanyDaoTestSuite {
@@ -14,49 +16,40 @@ class CompanyDaoTestSuite {
     @Autowired
     private CompanyDao companyDao;
 
+    @Autowired
+    private EmployeeDao employeeDao;
+
+
     @Test
-    void testSaveManyToMany() {
-        //Given
-        Employee johnSmith = new Employee("John", "Smith");
-        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
-        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+    public void shouldFindCompaniesByFirstThreeChars() {
 
-        Company softwareMachine = new Company("Software Machine");
-        Company dataMaesters = new Company("Data Maesters");
-        Company greyMatter = new Company("Grey Matter");
+        Company company1 = new Company("ABC Corporation");
+        Company company2 = new Company("XYZ Limited");
+        Company company3 = new Company("ABE Industries");
 
-        softwareMachine.getEmployees().add(johnSmith);
-        dataMaesters.getEmployees().add(stephanieClarckson);
-        dataMaesters.getEmployees().add(lindaKovalsky);
-        greyMatter.getEmployees().add(johnSmith);
-        greyMatter.getEmployees().add(lindaKovalsky);
+        companyDao.saveAll(List.of(company1, company2, company3));
 
-        johnSmith.getCompanies().add(softwareMachine);
-        johnSmith.getCompanies().add(greyMatter);
-        stephanieClarckson.getCompanies().add(dataMaesters);
-        lindaKovalsky.getCompanies().add(dataMaesters);
-        lindaKovalsky.getCompanies().add(greyMatter);
+        List<Company> resultCompanies = companyDao.findByFirstThreeChars("ABC");
 
-        //When
-        companyDao.save(softwareMachine);
-        int softwareMachineId = softwareMachine.getId();
-        companyDao.save(dataMaesters);
-        int dataMaestersId = dataMaesters.getId();
-        companyDao.save(greyMatter);
-        int greyMatterId = greyMatter.getId();
-
-        //Then
-        assertNotEquals(0, softwareMachineId);
-        assertNotEquals(0, dataMaestersId);
-        assertNotEquals(0, greyMatterId);
-
-        //CleanUp
-        //try {
-        //    companyDao.deleteById(softwareMachineId);
-        //    companyDao.deleteById(dataMaestersId);
-        //    companyDao.deleteById(greyMatterId);
-        //} catch (Exception e) {
-        //    //do nothing
-        //}
+        assertEquals(2, resultCompanies.size());
+        assertTrue(resultCompanies.contains(company1));
+        assertTrue(resultCompanies.contains(company3));
     }
+
+    @Test
+    public void shouldFindEmployeesByLastName() {
+
+        Employee employee1 = new Employee("John", "Doe");
+        Employee employee2 = new Employee("Jane", "Doe");
+        Employee employee3 = new Employee("Alice", "Smith");
+
+        employeeDao.saveAll(List.of(employee1, employee2, employee3));
+
+        List<Employee> resultEmployees = employeeDao.findByLastname("Doe");
+
+        assertEquals(2, resultEmployees.size());
+        assertTrue(resultEmployees.contains(employee1));
+        assertTrue(resultEmployees.contains(employee2));
+    }
+
 }
